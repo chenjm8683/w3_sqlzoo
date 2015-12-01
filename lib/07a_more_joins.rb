@@ -220,9 +220,12 @@ def expensive_tastes
         albums AS a
       INNER JOIN
         tracks AS t
-      ON a.asin = t.album
-      WHERE a.price IS NOT NULL
-      GROUP BY a.asin
+      ON
+        a.asin = t.album
+      WHERE
+        a.price IS NOT NULL
+      GROUP BY
+        a.asin
     ) AS a2
     INNER JOIN
       styles AS s
